@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RE Concierge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body><!-- כפתור ניגון מוזיקה -->
+<button id="play-music-btan">⏯</button>
+<!-- נגן מוזיקה מוסתר -->
+<audio id="bg-music" loop>
+  <source src="audios/1.mp3" type="audio/mpeg">
+</audio>
+  <header>
+    <div class="top-bar">
+      <button id="lang-toggle" aria-label="Toggle Language">עברית</button>
+      <div class="social-icons-top">
+        <a href="https://wa.me/972559844081" aria-label="WhatsApp" target="_blank" rel="noopener">
+          <img src="icons/whatsapp.png" alt="WhatsApp" width="24" height="24" />
+        </a>
+        <a href="https://www.facebook.com/reuven.eldary" aria-label="Facebook" target="_blank" rel="noopener">
+          <img src="icons/facebook.png" alt="facebook" width="24" height="24" />
+        </a> 
+      </div>
+    </div>
+  </header>
+  <div class="hero">
+    <div class="hero-content center-logo">
+      <h1 id="company-name">RE Concierge</h1>
+      <p id="tagline" data-en="Your personal concierge service" data-he="שירות קונסיירז' אישי עבורך">
+        Your personal concierge service
+      </p>
+    </div>
+    <button id="menu-toggle" aria-expanded="false" data-en="☰  Menu" data-en-label="Open menu" data-he=" ☰  תפריט" data-he-label="פתח תפריט">☰ תפריט</button>
+  <nav id="menu" class="hidden" role="navigation" aria-label="Services menu">
+     <ul>
+  <li><a href="#about-us" data-en="About us" data-he="עלינו">About us</a></li>
+  <li><a href="#events" data-en="Events" data-he="אירועים">Events</a></li>
+  <li><a href="#flights" data-en="Flights" data-he="טיסות">Flights</a></li>
+  <li><a href="#transfers" data-en="Transfers" data-he="העברות">Transfers</a></li>
+  <li><a href="#security" data-en="Security" data-he="אבטחה">Security</a></li>
+  <li><a href="#luxury" data-en="Luxury" data-he="יוקרה">Luxury</a></li>
+  <li><a href="#community" data-en="Community" data-he="קהילה">Community</a></li>
+  <li><a href="#contact-us" data-en="Contact us" data-he="צור קשר">Contact us</a></li>
+</ul>
+</nav>
+  </div>
+  <main>
+    <section id="about-us" style="padding: 2rem;">
+      <h2 data-he="עלינו" data-en="About us">עלינו</h2>
+      <p data-he="בחברתנו אנו מציעים מעטפת שירותים רחבה ויוקרתית, המיועדת ללקוחות פרטיים ועסקיים כאחד. אנו מתמחים בניהול אישי ואחראי של מגוון תחומים, תוך שמירה על סטנדרטים בלתי מתפשרים של שירות, איכות ודיסקרטיות." 
+         data-en="Our company offers a wide and luxurious range of services tailored for both private and business clients. We specialize in personal and professional management across various domains, maintaining uncompromising standards of service, quality, and discretion.">
+        חברתנו אנו מציעים מעטפת שירותים רחבה ויוקרתית...
+      </p>
+
+      <ul>
+        <li data-he="שירותי קונסיירז' אישיים ועסקיים" data-en="Personal and Business Concierge Services">שירותי קונסיירז'</li>
+        <li data-he="הפקת אירועי יוקרה ואירועי חברה בהתאמה אישית" data-en="Production of Luxury and Corporate Events">הפקת אירועים</li>
+        <li data-he="תכנון חופשות ונסיעות פרטיות או עסקיות, כולל ליווי מלא" data-en="Planning of Private and Business Trips, Including Full Support">תכנון חופשות</li>
+        <li data-he="שירותי אבטחה אישית ומוסדית" data-en="Personal and Institutional Security Services">שירותי אבטחה</li>
+        <li data-he="סידורי תחבורה, לינה ואירוח, פתרונות VIP נוספים" data-en="Transport, Accommodation, Hosting, and Other VIP Solutions">סידורי VIP</li>
+        <li data-he="מענה לבקשות בהתראה קצרה" data-en="Rapid Response to Special Requests">מענה מהיר</li>
+      </ul>
+
+      <p data-he="כל לקוח אצלנו נהנה מליווי צמוד, יחס אישי וחוויית שירות יוצאת דופן, המותאמת לצרכיו ולסגנון חייו הייחודי. בזכות רשת קשרים ענפה וניסיון עשיר, אנו הופכים כל משימה לפשוטה, מהירה ואלגנטית." 
+         data-en="Each client enjoys personalized service and close guidance, tailored to their unique needs and lifestyle. Thanks to an extensive network and vast experience, we turn every task into a simple, swift, and elegant experience.">
+        כל לקוח אצלנו נהנה מליווי צמוד...
+      </p>
+    </section>
+
+    <!-- המשך שאר הסקשנים כפי שהם בדיוק -->
+ <section id="events" tabindex="-1">
+  <h2 data-en="Events" data-he="אירועים">Events</h2>
+  
+  <p data-en="We specialize in high-end private and corporate events, with meticulous attention to detail and a commitment to excellence. From corporate launches to intimate celebrations – we deliver a seamless, luxurious experience."
+     data-he="אנו מתמחים בהפקת אירועים פרטיים ועסקיים ברמת פרימיום, תוך הקפדה על כל פרט ומחויבות למצוינות. מאירועי חברה ועד חגיגות אינטימיות – אנו מספקים חוויה יוקרתית והרמונית.">
+    We specialize in high-end private and corporate events, with meticulous attention to detail and a commitment to excellence. From corporate launches to intimate celebrations – we deliver a seamless, luxurious experience.
+  </p>
+
+  <ul>
+    <li data-en="End-to-end event planning and production" data-he="תכנון והפקה מקצה לקצה">End-to-end event planning and production</li>
+    <li data-en="Tailored styling and luxury design" data-he="עיצוב בהתאמה אישית ואווירת יוקרה">Tailored styling and luxury design</li>
+    <li data-en="Vendor, budget and schedule management" data-he="ניהול ספקים, תקציב ולוחות זמנים">Vendor, budget and schedule management</li>
+    <li data-en="Professional guidance from concept to execution" data-he="ליווי מקצועי משלב הרעיון ועד הביצוע">Professional guidance from concept to execution</li>
+    <li data-en="Corporate and private events of all scales" data-he="אירועים עסקיים ופרטיים בכל היקף">Corporate and private events of all scales</li>
+  </ul>
+</section>
+
+    <section id="flights" tabindex="-1">
+      <h2 data-en="Flights" data-he="טיסות">Flights</h2>
+      <p data-en="Private jet bookings, business travel coordination, and real-time flight tracking."
+         data-he="הזמנת מטוסים פרטיים, תיאום טיסות עסקיות ומעקב בזמן אמת.">
+        Private jet bookings, business travel coordination, and real-time flight tracking.
+      </p>
+      <ul>
+        <li data-en="Chartering private jets worldwide" data-he="השכרת מטוסים פרטיים ברחבי העולם">Chartering private jets worldwide</li>
+        <li data-en="Priority check-in and VIP lounge access" data-he="צ'ק-אין מועדף וגישה לטרקלינים VIP">Priority check-in and VIP lounge access</li>
+        <li data-en="Flight change and cancellation assistance" data-he="סיוע בשינוי וביטול טיסות">Flight change and cancellation assistance</li>
+        <li data-en="Real-time flight status updates" data-he="עדכוני מצב טיסה בזמן אמת">Real-time flight status updates</li>
+      </ul>
+    </section>
+
+    <section id="transfers" tabindex="-1">
+      <h2 data-en="Transfers" data-he="העברות">Transfers</h2>
+      <p data-en="Luxury ground transport including limousines, armored vehicles, and chauffeurs."
+         data-he="הסעות יוקרתיות כולל לימוזינות, רכבים ממוגנים ונהגים פרטיים.">
+        Luxury ground transport including limousines, armored vehicles, and chauffeurs.
+      </p>
+      <ul>
+        <li data-en="Airport pick-up and drop-off services" data-he="שירותי הסעה לשדות תעופה">Airport pick-up and drop-off services</li>
+        <li data-en="Chauffeur-driven luxury cars" data-he="נהגים פרטיים ברכבי יוקרה">Chauffeur-driven luxury cars</li>
+        <li data-en="Secure armored vehicle transportation" data-he="הסעה ברכבים ממוגנים בטוחים">Secure armored vehicle transportation</li>
+        <li data-en="Custom travel itineraries" data-he="תכניות נסיעה מותאמות אישית">Custom travel itineraries</li>
+      </ul>
+    </section>
+
+    <section id="security" tabindex="-1">
+      <h2 data-en="Security" data-he="אבטחה">Security</h2>
+      <p data-en="Discreet personal security services with trained personnel and full coverage."
+         data-he="שירותי אבטחה אישית דיסקרטיים עם צוות מיומן וכיסוי מלא.">
+        Discreet personal security services with trained personnel and full coverage.
+      </p>
+      <ul>
+        <li data-en="Executive protection" data-he="הגנה על בכירים">Executive protection</li>
+        <li data-en="Event security planning" data-he="תכנון אבטחת אירועים">Event security planning</li>
+        <li data-en="Surveillance and monitoring" data-he="מעקב ובקרה">Surveillance and monitoring</li>
+        <li data-en="Risk assessment and consultation" data-he="הערכת סיכונים וייעוץ">Risk assessment and consultation</li>
+      </ul>
+    </section>
+
+    <section id="luxury" tabindex="-1">
+      <h2 data-en="Luxury" data-he="יוקרה">Luxury</h2>
+      <p data-en="Exclusive access to luxury brands, bespoke experiences, and tailored services."
+         data-he="גישה בלעדית למותגי יוקרה, חוויות בהתאמה אישית ושירותים מותאמים.">
+        Exclusive access to luxury brands, bespoke experiences, and tailored services.
+      </p>
+      <ul>
+        <li data-en="Private shopping assistants" data-he="עוזרי קניות פרטיים">Private shopping assistants</li>
+        <li data-en="Luxury vacation planning" data-he="תכנון חופשות יוקרתיות">Luxury vacation planning</li>
+        <li data-en="Exclusive dining experiences" data-he="חוויות אוכל בלעדיות">Exclusive dining experiences</li>
+        <li data-en="Custom event invitations" data-he="הזמנות לאירועים מותאמים אישית">Custom event invitations</li>
+      </ul>
+    </section>
+
+    <section id="community" tabindex="-1">
+      <h2 data-en="Community" data-he="קהילה">Community</h2>
+      <p data-en="Building connections and fostering relationships within exclusive networks."
+         data-he="בניית קשרים וטיפוח מערכות יחסים ברשתות בלעדיות.">
+        Building connections and fostering relationships within exclusive networks.
+      </p>
+      <ul>
+        <li data-en="Networking events" data-he="אירועי נטוורקינג">Networking events</li>
+        <li data-en="Philanthropic initiatives" data-he="יוזמות פילנתרופיות">Philanthropic initiatives</li>
+        <li data-en="Member-exclusive content" data-he="תוכן בלעדי לחברים">Member-exclusive content</li>
+        <li data-en="Community forums" data-he="פורומים לקהילה">Community forums</li>
+      </ul>
+    </section>
+<section id="contact-us">
+  <h2 data-en="Contact us" data-he="צור קשר">Contact us</h2>
+  <form action="https://formspree.io/f/xyzpykzk" method="POST">
+     <label for="name" data-en="Full Name:" data-he="שם מלא:">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email" data-en="Email:" data-he="אימייל:">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message" data-en="Message:" data-he="הודעה:">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit" data-en="Send" data-he="שלח">Send</button>
+  </form>
+</section>
+  </main>
+  <footer>
+    <p>&copy; 2025 RE Concierge. All rights reserved.</p>
+  </footer>
+<script src="script.js" defer></script>
+</body>
+</html>
