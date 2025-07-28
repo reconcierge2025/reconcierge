@@ -359,42 +359,128 @@ body.rtl #lang-toggle {
 /* Responsive */
 /* עיצוב מותאם למכשירים קטנים (מובייל) */
 @media (max-width: 600px) {
- nav#menu {
-  position: absolute;
-  top: 100%;
-  right: 1rem; /* מיקום התפריט במובייל */
-  background-color: none;
-  border-radius: 4px;
-  padding: 10px 0;
-  width: 180px;
-  max-height: 0;
-  opacity: 0;
-  overflow: open;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  pointer-events: none;
-  z-index: 10001;
-}
-nav#menu.open {
-  max-height: 500px;
-  opacity: 1;
-  pointer-events: auto;
-}
+  body.scrolled .hero-content.center-logo {
+    left: 20px !important;
+    right: auto !important;
+    top: 10px !important;
+    transform: none !important;
+    text-align: left !important;
+  }
+
+  #lang-toggle {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(80px);
+    font-size: 0.5rem;       /* קטן יותר */
+    font-weight: 700;
+    color: black;
+    background-color: transparent;
+    padding: 0.3rem 0.6rem;  /* פחות פדינג */
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 3000;
+  }
+
+  #lang-toggle:hover {
+    background-color: #a0703f;
+    color: white;
+    transform: translateX(80px) scale(1.05);
+  }
+
+  #lang-toggle:focus {
+    transform: translateX(80px) scale(1.2);
+  }
+  body::before {
+    background-image: url("images/Bgm.webp"); /* תמונת הרקע למובייל */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.hero-content.center-logo h1 {
+    font-size: 2rem;
+  }
+  .hero-content.center-logo p {
+    font-size: 1rem;
+  }
+ #menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10002;
+  }
+  body.rtl nav#menu,
+  body.ltr nav#menu {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    text-align: center !important;
+  }
+  html[dir="ltr"] #menu-toggle,
+  html[dir="rtl"] #menu-toggle {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    text-align: center !important;
+  }
+  nav#menu {
+    position: absolute;
+    top: 60px; /* רווח קטן מתחת לכפתור */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95); /* רקע לבן חצי שקוף */
+    border-radius: 8px;
+    padding: 10px 0;
+    width: 90%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 10001;
+    text-align: center;
+  }
+
+  nav#menu.open {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   nav#menu ul {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
+
   nav#menu li a {
-    padding: 15px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
   }
-  nav#menu li a:hover,
-  nav#menu li a:focus {
-    background-color: #ddd;
-  }
+
   nav#menu li:last-child a {
     border-bottom: none;
+  }
+
+  nav#menu li a:hover,
+  nav#menu li a:focus {
+    background-color: #eee;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+  #play-music-btn {
+    top: 10px !important;
+    bottom: auto !important;
+    right: 10px !important;
+    left: auto !important;
+    padding: 8px 12px;
+    font-size: 16px;
+    z-index: 3000;
   }
   .hero {
     justify-content: space-between;
@@ -588,4 +674,7 @@ body.scrolled .hero-content.center-logo h1 {
 
 body.scrolled .hero-content.center-logo p {
   font-size: 1rem;
+}
+html {
+  scroll-behavior: smooth;
 }
