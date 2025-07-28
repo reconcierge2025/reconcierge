@@ -225,15 +225,16 @@ footer {
 /* סגנון לאייקוני רשת חברתית */
 /* מיקום קבוע במרכז עליון עם ריווח בין האייקונים */
 .social-icons-top {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 15px;
+   position: fixed;
+  bottom: 20px;
+  right: 20px;
   z-index: 3000;
+  border-radius: 50px;
+  padding: 15px 20px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
-
 /* גודל ואפקט הנעה לאייקונים */
 .social-icons-top a img {
   width: 36px;
@@ -244,7 +245,7 @@ footer {
 /* הגדלת האייקונים כשמרחפים או מקבלים פוקוס */
 .social-icons-top a:hover img,
 .social-icons-top a:focus img {
-  transform: scale(1.2);
+  transform: scale(1.7);
 }
 
 /* סגנון כללי לכפתורי רשת חברתית */
@@ -275,16 +276,6 @@ footer {
 .social-btn.whatsapp:hover,
 .social-btn.whatsapp:focus {
   background-color: #1DA851;
-}
-
-/* צבעים ספציפיים לכפתורי פייסבוק */
-.social-btn.facebook {
-  background-color: #1877F2;
-}
-
-.social-btn.facebook:hover,
-.social-btn.facebook:focus {
-  background-color: #0F61D1;
 }
 
 /* סגנונות לטופס יצירת קשר */
@@ -427,10 +418,10 @@ body.rtl #lang-toggle {
   }
   nav#menu {
     position: absolute;
-    top: 60px; /* רווח קטן מתחת לכפתור */
+    top: 100px; /* רווח קטן מתחת לכפתור */
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.95); /* רקע לבן חצי שקוף */
+    background-color: rgba(255, 255, 255, 0.664); /* רקע לבן חצי שקוף */
     border-radius: 8px;
     padding: 10px 0;
     width: 90%;
