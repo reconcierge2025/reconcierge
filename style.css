@@ -104,10 +104,15 @@ body {
   cursor: pointer;
   position: fixed;
   top: 10px;
-  left: 520px;
+  left: 20px;
   z-index: 3000;
 }
-
+body.scrolled #lang-toggle {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
 /* אפקט מעבר ועיגול לכפתור השפה */
 #lang-toggle:hover {
   background-color: #a0703f;
@@ -361,7 +366,7 @@ body.rtl #lang-toggle {
   #lang-toggle {
     position: fixed;
     top: 10px;
-    left: 50%;
+    left:0px;
     transform: translateX(80px);
     font-size: 0.5rem;       /* קטן יותר */
     font-weight: 700;
@@ -395,13 +400,7 @@ body.rtl #lang-toggle {
   .hero-content.center-logo p {
     font-size: 1rem;
   }
- #menu-toggle {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10002;
-  }
+
   body.rtl nav#menu,
   body.ltr nav#menu {
     left: 50% !important;
@@ -409,49 +408,66 @@ body.rtl #lang-toggle {
     transform: translateX(-50%) !important;
     text-align: center !important;
   }
-  html[dir="ltr"] #menu-toggle,
   html[dir="rtl"] #menu-toggle {
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%) !important;
-    text-align: center !important;
-  }
-  nav#menu {
-    position: absolute;
-    top: 100px; /* רווח קטן מתחת לכפתור */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.664); /* רקע לבן חצי שקוף */
-    border-radius: 8px;
-    padding: 10px 0;
-    width: 90%;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-    pointer-events: none;
-    z-index: 10001;
-    text-align: center;
+    right: 10px;
+    left: auto;
+    transform: none;
   }
 
+  html[dir="ltr"] #menu-toggle {
+    left: 10px;
+    right: auto;
+    transform: none;
+  }
+  nav#menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    max-width: 80%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+  }
+ html[dir="rtl"] nav#menu {
+    right: 0;
+    left: auto;
+    transform: translateX(100%);
+  }
+
+  html[dir="ltr"] nav#menu {
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+  }
+ 
   nav#menu.open {
-    max-height: 500px;
+    transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
   }
 
-  nav#menu ul {
+   nav#menu ul {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 1rem;
   }
 
   nav#menu li a {
-    padding: 12px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    color: black;
+    color: #000;
     font-weight: bold;
     font-size: 1.1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  nav#menu li a:hover {
+    background-color: #f0f0f0;
   }
 
   nav#menu li:last-child a {
