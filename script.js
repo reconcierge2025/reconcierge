@@ -130,4 +130,46 @@ window.addEventListener('scroll', () => {
       }
     }
 });
+// -------------------------
+// מודאל מדיניות פרטיות
+// -------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const privacyLink = document.getElementById('privacy-link');
+  const privacyModal = document.getElementById('privacy-modal');
+  const closeBtn = privacyModal.querySelector('.close-btn');
+  const modalContent = privacyModal.querySelector('.modal-content');
+
+  function openPrivacyModal() {
+    privacyModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // מניעת גלילה ברקע
+    modalContent.focus();
+  }
+
+  function closePrivacyModal() {
+    privacyModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // מחזיר גלילה
+    privacyLink.focus();
+  }
+
+  privacyLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    openPrivacyModal();
+  });
+
+  closeBtn.addEventListener('click', closePrivacyModal);
+
+  // סגירה ב-ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && privacyModal.getAttribute('aria-hidden') === 'false') {
+      closePrivacyModal();
+    }
+  });
+
+  // סגירה בלחיצה מחוץ לחלון
+  privacyModal.addEventListener('click', (e) => {
+    if (e.target === privacyModal) {
+      closePrivacyModal();
+    }
+  });
+});
 
